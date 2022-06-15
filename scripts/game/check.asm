@@ -106,6 +106,16 @@ Complete:
 	PlaySound sfx.win
 
 	Inc_Ram RAM.LevelsSolved
+	ci 10
+	bnz NoWrapSolved
+
+	clr
+	Store_Ram RAM.LevelsSolved
+
+	Inc_Ram RAM.LevelsSolved2
+
+NoWrapSolved:
+
 	Dec_Ram RAM.GameRunning
 
 	li 100

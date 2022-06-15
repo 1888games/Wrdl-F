@@ -188,6 +188,17 @@ NextLevelNow:
 
 	Inc_Ram RAM.GameRunning
 	Inc_Ram RAM.CurrentLevel
+
+	ci 10
+	bnz NoWrapLevel
+
+	clr
+	Store_Ram RAM.CurrentLevel
+
+	Inc_Ram RAM.CurrentLevel2
+
+
+NoWrapLevel:
 	
 	li 250
 	Store_Ram RAM.ReduceTimer

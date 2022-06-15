@@ -5,9 +5,8 @@ LEVEL.Draw:
 DrawLevel:
 
 	Load_Ram RAM.CurrentLevel
-	ai 27
+	ai 26
 	lr BLIT_ID, a
-
 
 	li Transparent
 	lr BLIT_BG, a	
@@ -18,32 +17,69 @@ DrawLevel:
 	li TEXT_START_Y + NUMBER_Y_OFFSET
 	lr BLIT_Y, a
 
-	li HUD_X_START + 12
+	li HUD_X_START + 14
+	lr BLIT_X, a
+
+	pi DrawChar
+
+	Load_Ram RAM.CurrentLevel2
+	ai 26
+	lr BLIT_ID, a
+
+	li Transparent
+	lr BLIT_BG, a	
+
+	li Green
+	lr BLIT_COLOUR, a
+
+	li TEXT_START_Y + NUMBER_Y_OFFSET
+	lr BLIT_Y, a
+
+	li HUD_X_START + 10
 	lr BLIT_X, a
 
 	pi DrawChar
 
 DrawSuccess:
 
-	Load_Ram RAM.CurrentLevel
-	ai 26
-	lr BLIT_ID, a
+	;Load_Ram RAM.CurrentLevel
+	;ai 26
+	;lr BLIT_ID, a
 	
-	li Transparent
-	lr BLIT_BG, a	
+	;li Transparent
+	;lr BLIT_BG, a	
 
-	li Red
-	lr BLIT_COLOUR, a
+	;li Red
+	;lr BLIT_COLOUR, a
 
-	li TEXT_START_Y + NUMBER_Y_OFFSET + (TEXT_GAP * 2)
-	lr BLIT_Y, a
+	;li TEXT_START_Y + NUMBER_Y_OFFSET + (TEXT_GAP * 2)
+	;lr BLIT_Y, a
 
-	li HUD_X_START + 18
-	lr BLIT_X, a
+	;li HUD_X_START + 22
+	;lr BLIT_X, a
 
-	pi DrawChar
+	;pi DrawChar
+
+	;Load_Ram RAM.CurrentLevel2
+	;ai 26
+	;lr BLIT_ID, a
+
+	;li Transparent
+	;lr BLIT_BG, a	
+
+	;li Red
+	;lr BLIT_COLOUR, a
+
+	;li TEXT_START_Y + NUMBER_Y_OFFSET + (TEXT_GAP * 2)
+	;lr BLIT_Y, a
+
+	;li HUD_X_START + 18
+	;lr BLIT_X, a
+
+	;pi DrawChar
 
 
+DrawSolved:
 
 	Load_Ram RAM.LevelsSolved
 	ai 26
@@ -58,13 +94,14 @@ DrawSuccess:
 	li TEXT_START_Y + NUMBER_Y_OFFSET + (TEXT_GAP * 2)
 	lr BLIT_Y, a
 
-	li HUD_X_START + 6
+	li HUD_X_START + 14
 	lr BLIT_X, a
 
 	pi DrawChar
 
-
-	li SLASH_CHAR
+	
+	Load_Ram RAM.LevelsSolved2
+	ai 26
 	lr BLIT_ID, a
 	
 	li Transparent
@@ -76,10 +113,28 @@ DrawSuccess:
 	li TEXT_START_Y + NUMBER_Y_OFFSET + (TEXT_GAP * 2)
 	lr BLIT_Y, a
 
-	li HUD_X_START + 12
+	li HUD_X_START + 10
 	lr BLIT_X, a
 
 	pi DrawChar
+
+
+;	li SLASH_CHAR
+;	lr BLIT_ID, a
+	
+;	li Transparent
+;	lr BLIT_BG, a	
+
+;	li Red
+;	lr BLIT_COLOUR, a
+
+;	li TEXT_START_Y + NUMBER_Y_OFFSET + (TEXT_GAP * 2)
+;	lr BLIT_Y, a
+
+;	li HUD_X_START + 10
+;	lr BLIT_X, a
+
+;	pi DrawChar
 
 	jmp FRAME.LevelDone
 

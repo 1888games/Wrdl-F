@@ -56,15 +56,6 @@ ScoreDone:
 
 
 
-;SCORE.Poison:
-	;Inc_Ram RAM.ScoreAddTens
-	
-	;pop
-
-
-
-	
-
 
 AddToScore: 
 
@@ -163,6 +154,7 @@ DoneAdding:
 
 ReduceFromScore: 
 
+	
 	;// loop back from digit 6 to digit 1
 	li 6
 	lr 1, a
@@ -235,6 +227,25 @@ NextDigit2:
 	ai 255
 	ci 0
 	bnz CarryOn
+
+	Load_Ram RAM.ScoreHundredThousands
+	ci 9
+	bnz NoWrapScore
+
+	Load_Ram RAM.ScoreTenThousands
+	ci 9
+	bnz NoWrapScore
+
+	li 0
+	Store_Ram RAM.Score
+	st
+	st
+	st
+	st
+	st
+	st
+
+NoWrapScore:
 
 	jmp DoneAdding
 

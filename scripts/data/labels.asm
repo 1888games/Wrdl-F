@@ -24,7 +24,7 @@ Clear = 				$FF
 X_Reg = 45
 Y_Reg = 44
 
-SCORE_TIME = 120
+SCORE_TIME = 12
 
 
 

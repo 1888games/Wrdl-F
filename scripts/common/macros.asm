@@ -128,14 +128,44 @@
 
 		MAC GetRandom
 
-			dci RAM.Seed
-			lm
-			dci RandomLookup
-			adc
-			lm
-			lr 0, A
-			Inc_Ram RAM.Seed
-			lr A, 0
+			;dci RAM.Seed
+			;lm
+			;dci RandomLookup
+			;adc
+			;lm
+			;lr 0, A
+			;Inc_Ram RAM.Seed
+			;lr A, 0
+
+
+			;dci RAM.Seed
+			;lm
+			;sl 1
+			;sl 1
+			;dci RAM.Seed
+			;ai 17
+			;dci RAM.Seed
+			;st
+
+
+			Load_Ram RAM.Seed
+			bz	.doEor
+			lr	11, A		; Save original number in r0
+			sl	1		; shift one step left
+			Store_Ram RAM.Seed
+			bz	.noEor
+
+			; Do XOR if b7 was 1, workaround for missing carry on "sl" 
+			lr	A, 11
+			ni	%10000000
+			bz	.noEor
+
+.doEor:
+			Load_Ram RAM.Seed
+			xi	$2b     ; Do the XOR thing
+			Store_Ram RAM.Seed
+.noEor:
+			
 
 		ENDM
 

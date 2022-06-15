@@ -49,10 +49,10 @@ SomeInput2:
 INPUT.FrameUpdate: 
 
 	Reset_Ram RAM.JoyFireNow
-	Reset_Ram RAM.JoyRightNow
-	Reset_Ram RAM.JoyUpNow
-	Reset_Ram RAM.JoyDownNow
-	Reset_Ram RAM.JoyLeftNow
+	st
+	st
+	st
+	st
 
 	clr						; clear accumulator 
 	outs	0					; enable input from both hand controllers

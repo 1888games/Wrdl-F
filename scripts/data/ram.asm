@@ -44,20 +44,22 @@ RAM.CheckCount =				10274
 RAM.TokensHeld = 				10275
 
 
-RAM.JoyDownNow	= 				10284
+RAM.JoyFireNow = 				10276
+RAM.JoyLeftNow =				10277
+RAM.JoyRightNow =				10278
+RAM.JoyUpNow = 					10279
+RAM.JoyDownNow =				10280
+
 RAM.JoyDownLast =				10285
-RAM.JoyUpNow = 					10286
 RAM.JoyUpLast = 				10287
-RAM.JoyRightNow =				10288
 RAM.JoyRightLast =				10289
-RAM.JoyLeftNow =				10290
 RAM.JoyLeftLast =				10291
-RAM.JoyFireNow = 				10292
 RAM.JoyFireLast = 				10293
 RAM.FireUpThisFrame = 			10294
 RAM.JoyRotateRight =            10295
 RAM.JoyRotateLeft =             10296
 RAM.JoyPullUp =                 10297
+RAM.Random =					10298
 
 RAM.BoxID	=                   10300
 RAM.TextType =					10301
@@ -102,3 +104,5 @@ RAM.ReduceScore = 				10344
 RAM.GameRunning = 				10345
 
 RAM.ScoreBefore =				10346
+RAM.CurrentLevel2 = 			10281
+RAM.LevelsSolved2 =				10282
